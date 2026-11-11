@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cosmic Defender: Roguelike</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>COSMIC DEFENDER</h1>
+  
+  <div id="hud">
+    <div class="hud-stat">Sector: <span id="wave-el">1</span></div>
+    <div class="hud-stat">Hull: <span id="hp-el">100</span> / <span id="maxhp-el">100</span></div>
+    <div class="hud-stat">Score: <span id="score-el">0</span></div>
+    <div class="hud-stat scrap-text">Scrap: <span id="scrap-el">0</span></div>
+  </div>
+
+  <div id="game-container">
+    <canvas id="gameCanvas" width="520" height="600"></canvas>
+
+    <!-- Start / Main Hangar Overlay -->
+    <div id="start-overlay" class="overlay">
+      <h2 id="title-text">HANGAR BAY</h2>
+      <p id="subtitle-text">Spend Scrap on permanent ship upgrades before launching.</p>
+      
+      <div class="meta-shop">
+        <div class="meta-row">
+          <span>Reinforced Hull (+20 Max HP) [Lv. <span id="meta-hp-lv">0</span>]</span>
+          <button id="buy-hp-btn" class="meta-btn">Upgrade (15 Scrap)</button>
+        </div>
+        <div class="meta-row">
+          <span>Plasma Capacitors (+15% Damage) [Lv. <span id="meta-dmg-lv">0</span>]</span>
+          <button id="buy-dmg-btn" class="meta-btn">Upgrade (20 Scrap)</button>
+        </div>
+        <div class="meta-row">
+          <span>Thruster Boost (+10% Speed) [Lv. <span id="meta-spd-lv">0</span>]</span>
+          <button id="buy-spd-btn" class="meta-btn">Upgrade (15 Scrap)</button>
+        </div>
+      </div>
+
+      <button id="start-btn">LAUNCH RUN</button>
+      <div id="instructions">Move: WASD / Arrow Keys / Mouse | Weapons Auto-Fire</div>
+    </div>
+
+    <!-- Sector Cleared / Upgrade Draft Overlay -->
+    <div id="draft-overlay" class="overlay hidden">
+      <h2>SECTOR CLEARED</h2>
+      <p>Choose an experimental system upgrade:</p>
+      <div id="card-container" class="card-grid"></div>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
